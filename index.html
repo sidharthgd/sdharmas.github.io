@@ -11,6 +11,10 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         body {
@@ -50,10 +54,11 @@
 
         .white-bar {
             background-color: white;
-            position: fixed; 
+            position: fixed;
             height: 1px;
             width: 100%;
-            top: 9.5%; /* Adjust to the height of your navbar */
+            top: 9.5%;
+            /* Adjust to the height of your navbar */
         }
 
         .welcome-text {
@@ -61,7 +66,7 @@
             text-align: center;
             color: white;
             margin-top: 70px;
-            font-family: 'Fira Code', monospace;
+            font-family: 'Source Code Pro', monospace;
             white-space: nowrap;
             overflow: hidden;
         }
@@ -70,67 +75,60 @@
             position: relative;
             max-width: 800px;
             margin: 20px auto;
-            padding: 30px;
+            padding: 20px;
             overflow: hidden;
-        }
-
-        .description-border {
-            position: absolute;
-            background-color: transparent;
-            /* Transparent background */
-            z-index: 1;
-            /* Make sure it appears on top */
-        }
-
-        /* Top-left L shape border */
-        .top-left-border {
-            top: 0;
-            left: 0;
-            width: 100px;
-            /* Width of the vertical line of L */
-            height: 100px;
-            /* Height of the horizontal line of L */
-            border-left: 2px solid white;
-            /* Left vertical border */
-            border-top: 2px solid white;
-            /* Top horizontal border */
-        }
-
-        /* Bottom-right L shape border */
-        .bottom-right-border {
-            bottom: 0;
-            right: 0;
-            width: 100px;
-            /* Width of the vertical line of L */
-            height: 100px;
-            /* Height of the horizontal line of L */
-            border-right: 2px solid white;
-            /* Right vertical border */
-            border-bottom: 2px solid white;
-            /* Bottom horizontal border */
+            border-radius: 15px;
+            /* Rounded corners */
+            background: black;
+            /* Background color to match */
+            box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.7),
+                0 0 5px 1px rgba(0, 255, 0, 0.7),
+                0 0 5px 1px rgba(0, 0, 255, 0.7),
+                0 0 5px 1px rgba(75, 0, 130, 0.7),
+                0 0 5px 1px rgba(148, 0, 211, 0.7);
+            /* Rainbow shadow */
+            animation: shimmer 3s infinite;
         }
 
         .description-text {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            font-family: 'Lato', monospace;
             text-align: justify;
             /* Justify the text */
             color: white;
+            line-height: 1.75; /* Adjust line height for spacing between lines */
             margin: 0;
             /* Remove margin to avoid extra space */
             position: relative;
-            /* Ensure text appears above the borders */
+            /* Ensure text appears above the shadows */
             z-index: 2;
-            /* Ensure text is above the borders */
+            /* Ensure text is above the shadows */
         }
+
+        .description-text p {
+            margin-bottom: 1.5%; /* Adjust this value for more or less space */
+        }
+
 
         .cursor {
             border-right: 3px solid white;
             animation: blink 0.7s steps(1) infinite;
         }
+        
 
         @keyframes blink {
             50% {
                 border-color: transparent;
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
             }
         }
     </style>
@@ -184,17 +182,18 @@
 
     <!-- Description Container -->
     <div class="description-container">
-        <div class="description-border top-left-border"></div> <!-- Top-left L shape border -->
-        <div class="description-border bottom-right-border"></div> <!-- Bottom-right L shape border -->
-        <div class="description-text">
-            Hi, my name is Sid Dharmasanam. I am a student at the University of Michigan studying Computer Science and Data Science with a minor in Mathematics. 
-            I am currently pursuing a Bachelor's degree in Computer Science at the University of Michigan. test text.test text.test text.test text.test text.
-            test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.
-            test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.test text.
-            test text. test text. test. test text. test.
+        <div class = "description-text">
+        <p>
+            Hi! My name is Sid and I'm a student at the University of Michigan, Ann Arbor. I'm majoring in Computer Science and
+            Data Science, with a minor in Math.
+            I love to code and learn about emerging technologies. I enjoy building projects that allow me to apply my skills and
+            push my boundaries as a developer. Feel free to reach out through email, I would love to connect!
+        </p>
+        <p>
+            In my free time, I play tennis, stduy philosphy, weight train, watch anime, and play chess. I'm rated 1300 on chess.com, challenge me to a game! I'm always looking for new opponents...
+        </p>
         </div>
     </div>
-
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
