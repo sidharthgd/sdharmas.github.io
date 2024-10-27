@@ -10,15 +10,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'>
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: black;
+            background-color: rgb(42, 41, 41);
             color: white;
             font-family: 'Roboto', sans-serif;
             padding-top: 70px;
@@ -31,7 +32,7 @@
         }
 
         .navbar {
-            background-color: black;
+            background-color: rgb(42, 41, 41);
             display: flex;
             justify-content: space-between;
             padding-left: 0;
@@ -55,7 +56,7 @@
         .white-bar {
             background-color: white;
             position: fixed;
-            height: 1px;
+            height: 2.5px;
             width: 100%;
             top: 67px;
         }
@@ -65,54 +66,83 @@
             text-align: center;
             color: white;
             margin-top: 70px;
-            font-family: 'Source Code Pro', monospace;
+            font-family: 'Montserrat', monospace;
+            font-weight: 250;
             white-space: nowrap;
             overflow: hidden;
         }
 
         .description-container {
             position: relative;
-            max-width: 930px;
+            max-width: 820px;
             margin: 2% auto;
             padding: 2%;
             overflow: hidden;
-            box-shadow: 0 0 20px rgb(45, 45, 45);
             border-radius: 10px;
         }
 
         .description-text {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
+            font-weight: 300;
             font-family: 'Lato', monospace;
             text-align: center;
             color: white;
-            line-height: 1.75; /* Adjust line height for spacing between lines */
+            line-height: 1.75;
             margin: 0;
-            /* Remove margin to avoid extra space */
             position: relative;
-            /* Ensure text appears above the shadows */
             z-index: 2;
-            /* Ensure text is above the shadows */
         }
 
         .description-text p {
-            margin-bottom: 5%; /* Adjust this value for more or less space */
+            margin-bottom: 5%;
         }
 
         .description-text p:last-of-type {
-            margin-bottom: 0; /* Remove space after the last paragraph */
+            margin-bottom: 0;
         }
-
 
         .cursor {
             border-right: 3px solid white;
             animation: blink 0.7s steps(1) infinite;
         }
-        
 
         @keyframes blink {
             50% {
                 border-color: transparent;
             }
+        }
+
+        /* New Styles for the Arrow and Blog Text */
+        .blog-arrow-container {
+            text-align: center;
+            position: fixed;
+            bottom: 30px;
+            /* Position it near the bottom */
+            left: 50%;
+            /* Center it horizontally */
+            transform: translateX(-50%);
+            /* Adjust for exact center */
+            color: white;
+            /* Text color */
+        }
+
+        .arrow {
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 10px solid white;
+            /* Arrow color */
+            margin: 5px auto;
+            /* Space above text */
+        }
+
+        .blog-text {
+            font-size: 1rem;
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            font-style: italic;
+            font-weight: 200; /* Set font weight to 200 */
         }
     </style>
 </head>
@@ -123,7 +153,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a href="" class="navbar-logo">
-                <img src="logo.png" alt="img not found" class="logo">
+                <img src="integral_logo.png" alt="img not found" class="logo">
             </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -161,21 +191,30 @@
     <div class="welcome-text cursor" id="typing-text"></div>
 
     <!-- Spacer Div -->
-    <div style="height: 30px;"></div>
+    <div style="height: 0px;"></div>
 
     <!-- Description Container -->
-    <div class = "description-container">
-        <div class = "description-text">
+    <div class="description-container">
+        <div class="description-text">
             <p>
-                Hi! My name is Sid and I'm a student at the University of Michigan, Ann Arbor. I'm majoring in Computer Science and
-                Data Science, with a minor in Mathematics. I enjoy building projects that allow me to apply my skills and
+                Hi! My name is Sid and I'm a student at the University of Michigan, Ann Arbor. I'm majoring in Computer
+                Science and
+                Data Science, with a minor in Mathematics. I enjoy building projects that allow me to apply my skills
+                and
                 push my boundaries as a developer. Feel free to reach out through email, I'd love to connect!
             </p>
             <p>
                 When I’m not coding, I’m on the tennis court, reading philosophy, lifting weights, or playing
-                chess. I am rated 1300 on chess.com, feel free to challenge me anytime. I'm always looking for new opponents...
+                chess. I am rated 1300 on chess.com if you would like to challenge me to a game. I'm always looking for
+                new opponents ◡̈
             </p>
         </div>
+    </div>
+
+    <!-- Blog Arrow and Text -->
+    <div class="blog-arrow-container">
+        <div class="arrow"></div>
+        <p class="blog-text">Check out my blog!</p>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
@@ -202,6 +241,9 @@
         window.onload = function () {
             typeEffect(); // Start typing effect when page loads
         };
+
+        const blogSectionId = 'blog'; // Change this to your actual blog section ID
+        const threshold = 300; // Adjust this value as needed for how far you scroll before triggering the scroll
     </script>
 </body>
 
