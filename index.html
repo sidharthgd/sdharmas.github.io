@@ -57,12 +57,11 @@
             position: fixed;
             height: 1px;
             width: 100%;
-            top: 9.5%;
-            /* Adjust to the height of your navbar */
+            top: 67px;
         }
 
         .welcome-text {
-            font-size: 4rem;
+            font-size: 5rem;
             text-align: center;
             color: white;
             margin-top: 70px;
@@ -73,28 +72,18 @@
 
         .description-container {
             position: relative;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            max-width: 930px;
+            margin: 2% auto;
+            padding: 2%;
             overflow: hidden;
-            border-radius: 15px;
-            /* Rounded corners */
-            background: black;
-            /* Background color to match */
-            box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.7),
-                0 0 5px 1px rgba(0, 255, 0, 0.7),
-                0 0 5px 1px rgba(0, 0, 255, 0.7),
-                0 0 5px 1px rgba(75, 0, 130, 0.7),
-                0 0 5px 1px rgba(148, 0, 211, 0.7);
-            /* Rainbow shadow */
-            animation: shimmer 3s infinite;
+            box-shadow: 0 0 20px rgb(45, 45, 45);
+            border-radius: 10px;
         }
 
         .description-text {
             font-size: 1.2rem;
             font-family: 'Lato', monospace;
-            text-align: justify;
-            /* Justify the text */
+            text-align: center;
             color: white;
             line-height: 1.75; /* Adjust line height for spacing between lines */
             margin: 0;
@@ -106,7 +95,11 @@
         }
 
         .description-text p {
-            margin-bottom: 1.5%; /* Adjust this value for more or less space */
+            margin-bottom: 5%; /* Adjust this value for more or less space */
+        }
+
+        .description-text p:last-of-type {
+            margin-bottom: 0; /* Remove space after the last paragraph */
         }
 
 
@@ -119,16 +112,6 @@
         @keyframes blink {
             50% {
                 border-color: transparent;
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            100% {
-                background-position: 100% 50%;
             }
         }
     </style>
@@ -181,17 +164,17 @@
     <div style="height: 30px;"></div>
 
     <!-- Description Container -->
-    <div class="description-container">
+    <div class = "description-container">
         <div class = "description-text">
-        <p>
-            Hi! My name is Sid and I'm a student at the University of Michigan, Ann Arbor. I'm majoring in Computer Science and
-            Data Science, with a minor in Math.
-            I love to code and learn about emerging technologies. I enjoy building projects that allow me to apply my skills and
-            push my boundaries as a developer. Feel free to reach out through email, I would love to connect!
-        </p>
-        <p>
-            In my free time, I play tennis, stduy philosphy, weight train, watch anime, and play chess. I'm rated 1300 on chess.com, challenge me to a game! I'm always looking for new opponents...
-        </p>
+            <p>
+                Hi! My name is Sid and I'm a student at the University of Michigan, Ann Arbor. I'm majoring in Computer Science and
+                Data Science, with a minor in Mathematics. I enjoy building projects that allow me to apply my skills and
+                push my boundaries as a developer. Feel free to reach out through email, I'd love to connect!
+            </p>
+            <p>
+                When I’m not coding, I’m on the tennis court, reading philosophy, lifting weights, or playing
+                chess. I am rated 1300 on chess.com, feel free to challenge me anytime. I'm always looking for new opponents...
+            </p>
         </div>
     </div>
 
