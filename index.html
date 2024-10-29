@@ -115,7 +115,7 @@
         .blog-arrow-container {
             text-align: center;
             position: fixed;
-            margin-top: 35%;
+            margin-top: 32%;
         }
 
         .arrow {
@@ -129,41 +129,39 @@
 
         /* Blog section styling */
         .blog-container {
-            background-color: rgb(255, 255, 255);
-            color: black;
+            background-color: #f8f9fa; /* Light gray background for contrast */
+            color: #343a40; /* Darker text color for better readability */
             padding: 40px;
             min-height: 100vh;
             margin-top: 30px;
             position: relative;
             scroll-snap-align: start;
+            border-radius: 10px; /* Add rounded corners */
         }
 
         .blog-container h2 {
-            font-size: 4rem;
-            font-weight: light;
-            font-family: 'Montserrat', monospace;
+            font-size: 3rem; /* Slightly smaller heading */
+            font-weight: bold; /* Make heading bold */
+            font-family: 'Montserrat', sans-serif; /* Consistent font */
             text-align: center;
-            padding-bottom: 50px;
-            padding-top: 70px;
+            padding-bottom: 50px; 
+            padding-top: 70px; 
         }
 
         .blog-post {
             margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            /* Rounded corners */
+            border-radius: 10px; /* Rounded corners */
+            background-color: white; /* White background for blog post */
+            transition: box-shadow 0.2s ease; /* Smooth transition for shadow */
+        }
+        .blog-post:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
         }
 
         .blog-post h3 {
-            font-size: 1.8rem;
-            margin-top: 20px;
+            font-size: 2rem; /* Smaller title size */
+            margin-top: 15px; /* Adjusted margin */
         }
-
-        .blog-post p {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
         .blog-text {
             font-size: 1rem;
             margin: 0;
@@ -253,8 +251,7 @@
             <div class="col-md-12">
                 <div class="card blog-post">
                     <div class="card-body">
-                        <h3 class="card-title">Blog Post 1</h3>
-                        <p class="card-text">This is the content of your first blog post...</p>
+                        <h3 class="card-title">The Toughest Assignment I've Ever Done: EECS 281 Project 2</h3>
                     </div>
                 </div>
             </div>
