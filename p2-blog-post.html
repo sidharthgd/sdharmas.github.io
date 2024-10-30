@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post Title</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            /* Dark background */
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .title-container {
+            font-family: 'Montserrat', sans-serif; /* Consistent font */
+            max-width: 800px;
+            margin: 70px auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            /* Larger heading size */
+            text-align: center;
+            /* Centered heading */
+            color: #000000;
+        }
+
+        .blog-post-content {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 30px;
+            background-color: #f8f9fa;
+            /* Light background for contrast */
+            color: #343a40;
+            /* Dark text color */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            /* Subtle shadow for depth */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-container">
+        <h1 class="my-4">The Toughest Assignment I've Ever Done: EECS 281 Project 2</h1>
+    </div>
+
+    <div class="blog-post-content">
+        <p>
+            As a CS major at UMich, I’ve encountered my fair share of challenging projects. However, none have pushed my limits and
+            caused more hair-pulling bugs like my recent stock market project covering priority queues and algorithm design. I look
+            back in horror at how many hours I invested into perfecting it, but also with gratitude, as it drove me to understand
+            the underlying concepts very well.
+        </p>
+        <p>
+            My task was to develop a system that could manage buy and sell orders efficiently, using custom comparators and priority
+            queues to simulate the flow of the stock market. In addition, I had to keep tracking of median purchase prices for individual stocks and
+            implement a "time traveler" that knew at what timestamp to buy and sell a stock to yield maximum profit.
+            I used the standard C++ "priority_queue" template for this portion. My final task was to implement my own template for a
+            sorted array priority queue, a binary heap priority queue, and a pairing heap priority queue.
+            I was also given runtime and memory usage restrictions, which added another layer of complexity to the project.
+        </p>
+        <p> 
+            It took me around 4 days to complete the actual functionality of the project, ignoring the restrictions on efficiency.
+            This was decently straightforward, just time-consuming due to the amount of logic that had to be written. However, it
+            then took me another 5 days to meet the runtime and memory restrictions, despite the functionality being correct. During
+            this time, I was forced to scour my code for any possible way to shave off even milliseconds from my runtime. This meant
+            rewriting algorithms to run in O(logn) instead of O(n), finding better ways to manipulate input strings, eliminating
+            duplicate code, etc.
+
+            Further, testing my code proved to be unintuitive. A correct sorted array is easy to identify, but a correct max-heap
+            given a random array of 30 custom "Stock" objects is a different story.
+        </p>
+        <p>
+            But after some long nights and visits to office hours, I was able to complete the project on the day it was due. I'm
+            grateful for how much I learned, but also thanking god that it's over. For my next project, I'm going to focus on coding
+            intuitively - this means naming variables and functions more descriptively - and writing more comments. Doing this well
+            would have made my debugging process much less arduous. I'll also do myself a favor and start earlier.
+        </p>
+    </div>
+</body>
+
+</html>

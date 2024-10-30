@@ -152,16 +152,40 @@
             margin-bottom: 30px;
             border-radius: 10px; /* Rounded corners */
             background-color: white; /* White background for blog post */
-            transition: box-shadow 0.2s ease; /* Smooth transition for shadow */
+            text-decoration: none;
+            color: #343a40; /* Darker text color */
+            transition: box-shadow 0.3s ease-in-out;
         }
+
         .blog-post:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slightly larger shadow */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
         }
+
+
+        .blog-post a {
+            text-decoration: none; /* Remove underline by default */
+        }
+        
 
         .blog-post h3 {
             font-size: 2rem; /* Smaller title size */
             margin-top: 15px; /* Adjusted margin */
         }
+
+         .blog-title {
+            font-size: 2rem;
+            padding: 20px;
+        }
+
+        .blog-title h3 {
+            font-size: 2.2rem;
+            font-family: 'Lato', sans-serif;
+            text-decoration: none;
+            color: #474545;
+
+        }
+
+
         .blog-text {
             font-size: 1rem;
             margin: 0;
@@ -250,9 +274,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card blog-post">
-                    <div class="card-body">
-                        <h3 class="card-title">The Toughest Assignment I've Ever Done: EECS 281 Project 2</h3>
-                    </div>
+                    <a href="p2-blog-post.html">
+                        <div class="blog-title">
+                            <h3>
+                                The Toughest Assignment I've Ever Done: EECS 281 Project 2
+                            </h3>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -273,7 +301,7 @@
             if (index < welcomeText.length) {
                 document.getElementById("typing-text").innerHTML += welcomeText.charAt(index);
                 index++;
-                setTimeout(typeText, 100);
+                setTimeout(typeText, 200);
             }
         }
 
