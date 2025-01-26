@@ -16,6 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
         rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
     <!-- Custom CSS -->
     <style>
         body {
@@ -56,76 +62,73 @@
 
         /* White bar below navbar */
         .white-bar {
-            background-color: white;
+            background: linear-gradient(to right, #ffffff, #39367a);
             position: fixed;
             height: 2.5px;
             width: 100%;
             top: 67px;
         }
 
-        /* Welcome text with typing effect */
-
         .welcome-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
-            padding-top: 80px;
+            padding-top: 180px;
             background-color: rgb(42, 41, 41);
             color: white;
             scroll-snap-align: start;
         }
 
         .welcome-text {
-            font-size: 5rem;
-            text-align: center;
-            color: white;
-            font-family: 'Montserrat', monospace;
-            font-weight: 250;
+            font-size: 4.5rem;
+            text-align: left;
+            padding-left: 225px;
+            color: rgba(255, 255, 255, 0.678);
+            font-family: 'Playfair Display', monospace;
+            font-weight: 500;
             white-space: nowrap;
             position: relative;
-            top: 0;
         }
 
         .description-container {
             position: relative;
-            max-width: 813px;
-            margin: 2% auto;
-            padding: 2%;
-            overflow: hidden;
-            border-radius: 10px;
+            max-width: 1500;
+            padding-top: 40px;
+            padding-left: 225px;
         }
 
         .description-container p {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .description-text {
-            position: relative;
-            font-size: 1.05rem;
-            font-weight: 300;
-            font-family: 'Lato', monospace;
-            text-align: center;
-            color: white;
+            font-size: 1.2rem;
+            font-weight: 200;
+            font-family: 'Playfair Display';
+            color: rgb(225, 214, 214);
             line-height: 1.75;
         }
 
-        /* Blog arrow and text */
-        .blog-arrow-container {
-            text-align: center;
-            position: fixed;
-            margin-top: 32%;
+        /* Scroll to Blog Button */
+        .scroll-button {
+            margin-top: 30px;
+            margin-left: 225px;
+            padding: 8px 16px;
+            font-size: 1.2rem;
+            background-color: rgb(42, 41, 41);
+            color: white;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
-        .arrow {
-            width: 0;
-            height: 0;
-            border-left: 7px solid transparent;
-            border-right: 7px solid transparent;
-            border-top: 10px solid white;
-            margin: 5px auto;
+        .scroll-button:hover {
+            background-color: #686565;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
 
         /* Blog section styling */
         .blog-container {
@@ -246,25 +249,23 @@
         <div class="description-container">
             <div class="description-text">
             <p>
-                Hi! My name is Sid and I'm a student at the University of Michigan, Ann Arbor. I'm majoring in Computer
-                Science and
-                Data Science, with a minor in Mathematics. I enjoy building projects that allow me to apply my skills
-                and
-                push my boundaries as a developer. Feel free to reach out through email, I'd love to connect!
+                ↳ &nbsp;&nbsp; i'm a student at the university of michigan. i'm majoring in data science with a minor in math
             </p>
             <p>
-                When I’m not coding, I’m on the tennis court, reading philosophy, lifting weights, or playing
-                chess. I am rated 1300 on chess.com if you would like to challenge me to a game. I'm always looking for
-                new opponents ◡̈
+                ↳ &nbsp;&nbsp; i'm interested in full-stack development, machine learning, and data visualization
+            </p>
+            <p>
+                ↳ &nbsp;&nbsp; i love learning and building meaningful technology
             </p>
             </div>
         </div>
+        <!-- Scroll to Blog Button -->
+        <div id="scrollButton" class="scroll-button" style="font-family: 'Playfair Display', serif;">read my blog</div>
+    </div>
 
-        <!-- Blog Arrow -->
-        <div class="blog-arrow-container" id="blogArrowContainer">
-            <div class="arrow"></div>
-            <p class="blog-text">Check out my blog!</p>
-        </div>
+
+
+        
     </div>
 
     <!-- Blog Section -->
@@ -301,14 +302,14 @@
 
     <script>
         // Typing effect for welcome text
-        const welcomeText = "Welcome.";
+        const welcomeText = "hi, i'm sid.";
         let index = 0;
 
         function typeText() {
             if (index < welcomeText.length) {
                 document.getElementById("typing-text").innerHTML += welcomeText.charAt(index);
                 index++;
-                setTimeout(typeText, 200);
+                setTimeout(typeText, 130);
             }
         }
 
@@ -326,6 +327,14 @@
                 blogArrowContainer.classList.remove('hidden');
             }
         });
+
+        //smooth scroll to blog section when button is clicked
+        document.getElementById('scrollButton').addEventListener('click', function () {
+            document.getElementById('blog-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
     </script>
 </body>
 
