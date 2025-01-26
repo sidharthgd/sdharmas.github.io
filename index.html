@@ -67,6 +67,7 @@
             height: 2.5px;
             width: 100%;
             top: 67px;
+            z-index: 10;
         }
 
         .welcome-container {
@@ -152,52 +153,38 @@
             padding-top: 70px; 
         }
 
-        .blog-post {
-            margin-bottom: 30px;
-            border-radius: 10px; /* Rounded corners */
-            background-color: white; /* White background for blog post */
-            text-decoration: none;
-            color: #343a40; /* Darker text color */
-            transition: box-shadow 0.3s ease-in-out;
-        }
-
-        .blog-post:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
-        }
-
-
-        .blog-post a {
-            text-decoration: none; /* Remove underline by default */
-        }
-        
-
-        .blog-post h3 {
-            font-size: 2rem; /* Smaller title size */
-            margin-top: 15px; /* Adjusted margin */
-        }
-
-         .blog-title {
-            font-size: 2rem;
+        .blog-tile {
+            background-color: rgb(42, 41, 41);
+            border-radius: 12px;
+            border: 2px solid white;
             padding: 20px;
+            margin-bottom: 30px;
+            height: 300px; /* Set height to make tiles taller */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .blog-tile:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        .blog-title h3 {
-            font-size: 2.2rem;
-            font-family: 'Lato', sans-serif;
-            text-decoration: none;
-            color: #474545;
-
+        .blog-tile h4 {
+            font-size: 1.6rem;
+            color: #ffffff;
+            font-weight: bold;
+            font-family: 'Playfair Display', sans-serif;
+            margin-bottom: 15px;
         }
 
-
-        .blog-text {
+        .blog-tile p {
             font-size: 1rem;
-            margin: 0;
-            font-family: 'Lato', sans-serif;
-            font-style: italic;
-            font-weight: 200;
+            color: #ffffff;
+            line-height: 1.5;
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin-bottom: 0;
         }
-
+       
         .hidden {
             display: none;
         }
@@ -263,38 +250,24 @@
         <!-- Scroll to Blog Button -->
         <div id="scrollButton" class="scroll-button" style="font-family: 'Playfair Display', serif; font-size: 1.1rem;">read my blog</div>
     </div>
-
-
-
-        
     </div>
 
     <!-- Blog Section -->
     <section id="blog-section" class="blog-container">
         <h2>My Blog</h2>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card blog-post">
-                    <a href="#">
-                        <div class="blog-title">
-                            <h3>
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="card blog-post">
-                    <a href="#">
-                        <div class="blog-title">
-                            <h3>
-                            </h3>
-                        </div>
-                    </a>
+        <div class="container">
+            <div class="row">
+                <!-- Blog Tile 1 -->
+                <div class="col-md-3">
+                    <div class="blog-tile">
+                        <h4>Data is Difficult (Coming soon...)</h4>
+                        <p>Currently (procrastinating) writing this post...</p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </section>
+
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
