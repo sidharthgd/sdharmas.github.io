@@ -4,312 +4,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Developer Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Sid Dharmasanam</title>
+    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-        rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: rgb(42, 41, 41);
-            color: white;
-            font-family: 'Roboto', sans-serif;
-            padding-top: 30px;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        html {
-            scroll-snap-type: y mandatory;
+        :root {
+            --page-bg: #121212;
+            --card-bg: #161616;
+            --text-primary: #ffffff;
+            --text-secondary: #b4b4b4;
+            --accent: #60a5fa;
+            --border: #2a2a2a;
+            --rainbow: conic-gradient(from 180deg at 50% 50%, #60a5fa, #a78bfa, #f472b6, #f59e0b, #34d399, #60a5fa);
         }
 
-        /* Navbar styling */
-        .navbar {
-            background-color: rgb(42, 41, 41);
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--page-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+
+
+        .social-link {
             display: flex;
-            justify-content: space-between;
-            padding-top: 1%;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
 
-        .navbar-nav .nav-link {
-            color: white !important;
+        .social-link:hover {
+            background: rgba(96, 165, 250, 0.12);
+            border-color: rgba(96, 165, 250, 0.5);
+            transform: translateY(-1px);
         }
 
-        .logo {
-            height: 45px;
-            padding-bottom: 5%;
+        .social-link img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) saturate(100%) invert(100%);
         }
 
-        .nav-item {
-            padding-right: 20px;
-        }
-
-        /* White bar below navbar */
-        .white-bar {
-            background: linear-gradient(to right, #ffffff, #39367a);
-            position: fixed;
-            height: 2.5px;
-            width: 100%;
-            top: 67px;
-            z-index: 10;
-        }
-
-        .welcome-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            height: 100vh;
-            padding-top: 180px;
-            background-color: rgb(42, 41, 41);
-            color: white;
-            scroll-snap-align: start;
-        }
-
-        .welcome-text {
-            font-size: 3rem;
-            text-align: left;
-            padding-left: 225px;
-            color: rgba(255, 255, 255, 0.678);
-            font-family: 'Playfair Display', monospace;
-            font-weight: 500;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        .description-container {
-            position: relative;
-            max-width: 1500;
-            padding-top: 40px;
-            padding-left: 225px;
-        }
-
-        .description-container p {
-            margin-bottom: 20px;
-        }
-
-        .description-text {
-            font-size: 1.2rem;
-            font-weight: 200;
-            font-family: 'Playfair Display';
-            color: rgb(225, 214, 214);
-            line-height: 1.75;
-        }
-
-        /* Scroll to Blog Button */
-        .scroll-button {
-            margin-top: 30px;
-            margin-left: 225px;
-            padding: 8px 16px;
-            font-size: 1.2rem;
-            background-color: rgb(42, 41, 41);
-            color: white;
-            border: 2px solid white;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .scroll-button:hover {
-            background-color: #686565;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-
-        /* Blog section styling */
-        .blog-container {
-            background-color: rgb(42, 41, 41); 
-            color: #343a40; 
-            padding: 40px;
+        /* Main layout */
+        .main {
             min-height: 100vh;
-            margin-top: 30px;
+            display: grid;
+            place-items: center;
+            padding: 40px 16px;
+        }
+
+        /* Center card */
+        .center-card {
             position: relative;
-            scroll-snap-align: start;
-            border-radius: 10px;
+            width: 100%;
+            max-width: 860px;
+            border-radius: 20px;
+            padding: 2px; /* rainbow border thickness */
+            background: var(--rainbow);
         }
 
-        .blog-container h2 {
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.678);
-            font-weight: bold;
-            font-family: 'Playfair Display', sans-serif;
+        .center-card-inner {
+            border-radius: 18px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 48px 32px;
             text-align: center;
-            padding-bottom: 50px; 
-            padding-top: 70px; 
         }
 
-        .blog-tile {
-            background-color: rgb(42, 41, 41);
-            border-radius: 12px;
-            border: 2px solid white;
-            padding: 20px;
-            margin-bottom: 30px;
-            height: 300px; /* Set height to make tiles taller */
+        .greeting {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            font-weight: 300;
+        }
+
+        .description {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 640px;
+            margin: 0 auto 28px;
+            font-weight: 400;
+        }
+
+        .interests {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .blog-tile:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
         }
 
-        .blog-tile h4 {
-            font-size: 1.6rem;
-            color: #ffffff;
-            font-weight: bold;
-            font-family: 'Playfair Display', sans-serif;
-            margin-bottom: 15px;
+        .interest-tag {
+            padding: 10px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            font-size: 0.9rem;
+            color: #e5e7eb;
+            transition: all 0.2s ease;
         }
 
-        .blog-tile p {
-            font-size: 1rem;
+        .interest-tag:hover {
+            border-color: #60a5fa;
             color: #ffffff;
-            line-height: 1.5;
-            font-family: 'IBM Plex Sans', sans-serif;
-            margin-bottom: 0;
         }
-       
-        .hidden {
-            display: none;
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .center-card-inner { padding: 36px 20px; }
+            .social-link { width: 36px; height: 36px; }
+            .social-link img { width: 18px; height: 18px; }
         }
     </style>
 </head>
 
 <body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a href="#" class="navbar-logo">
-                <img src="integral_logo.png" alt="Logo" class="logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=sdharmas@umich.edu"
-                            target="_blank"><img src="gmail_logo.png" alt="gmail" width="20px">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/sid-dharmasanam-0968b2237/"
-                            target="_blank"><img src="linkedin_logo.png" alt="LinkedIn" width="20px">
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://github.com/sidharthgd/" target="_blank"><img
-                                src="github_logo.png" alt="GitHub" width="20px">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- White Bar -->
-    <div class="white-bar"></div>
-
-    <!-- Welcome Section -->
-    <div id="welcome-section" class="welcome-container">
-        <!-- Welcome Text with Typing Effect -->
-        <div class="welcome-text cursor" id="typing-text"></div>
-
-        <!-- Description Container -->
-        <div class="description-container">
-            <div class="description-text">
-            <p>
-                ↳ &nbsp;&nbsp; i'm a student at the university of michigan. i'm majoring in data science with a minor in math
-            </p>
-            <p>
-                ↳ &nbsp;&nbsp; i'm interested in full-stack development, machine learning, and data visualization
-            </p>
-            <p>
-                ↳ &nbsp;&nbsp; i love building meaningful technology
-            </p>
-            </div>
-        </div>
-        <!-- Scroll to Blog Button -->
-        <div id="scrollButton" class="scroll-button" style="font-family: 'Playfair Display', serif; font-size: 1.1rem;">read my blog</div>
-    </div>
-    </div>
-
-    <!-- Blog Section -->
-    <section id="blog-section" class="blog-container">
-        <h2>My Blog</h2>
-        <div class="container">
-            <div class="row">
-                <!-- Blog Tile 1 -->
-                <div class="col-md-3">
-                    <div class="blog-tile">
-                        <h4>Data is Difficult (Coming soon...)</h4>
-                        <p>Currently (procrastinating) writing this post...</p>
-                    </div>
+    <!-- Main Content -->
+    <main class="main">
+        <div class="center-card">
+            <div class="center-card-inner">
+                <h1 class="greeting">hi im sid</h1>
+                <p class="description">
+                    I'm a junior @ umich ann arbor, passionate about cutting-edge AI systems.
+                </p>
+                <div class="interests">
+                    <span class="interest-tag">Full-Stack Development</span>
+                    <span class="interest-tag">Machine Learning</span>
+                    <span class="interest-tag">Generative AI</span>
+                    <span class="interest-tag">Real World Impact</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sdharmas@umich.edu" 
+                       target="_blank" 
+                       class="social-link"
+                       title="Email">
+                        <img src="gmail_logo.png" alt="Email">
+                    </a>
+                    <a href="https://www.linkedin.com/in/sid-dharmasanam-0968b2237/" 
+                       target="_blank" 
+                       class="social-link"
+                       title="LinkedIn">
+                        <img src="linkedin_logo.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/sidharthgd/" 
+                       target="_blank" 
+                       class="social-link"
+                       title="GitHub">
+                        <img src="github_logo.png" alt="GitHub">
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-        // Typing effect for welcome text
-        const welcomeText = "hi, i'm sid.";
-        let index = 0;
-
-        function typeText() {
-            if (index < welcomeText.length) {
-                document.getElementById("typing-text").innerHTML += welcomeText.charAt(index);
-                index++;
-                setTimeout(typeText, 130);
-            }
-        }
-
-        typeText();
-
-        //hide blog arrow after scrolling past a certain point
-        const blogSection = document.getElementById('blog-section');
-        const blogArrowContainer = document.getElementById('blogArrowContainer');
-
-        window.addEventListener('scroll', () => {
-            const sectionPosition = blogSection.getBoundingClientRect();
-            if (sectionPosition.top < window.innerHeight && sectionPosition.bottom > 0) {
-                blogArrowContainer.classList.add('hidden');
-            } else {
-                blogArrowContainer.classList.remove('hidden');
-            }
-        });
-
-        //smooth scroll to blog section when button is clicked
-        document.getElementById('scrollButton').addEventListener('click', function () {
-            document.getElementById('blog-section').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-
-    </script>
+    </main>
 </body>
 
 </html>
